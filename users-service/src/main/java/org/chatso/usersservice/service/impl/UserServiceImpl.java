@@ -25,13 +25,13 @@ public class UserServiceImpl implements UserService {
     @Override
     public Optional<UserResponse> findUserByUuid(String uuid) {
         Optional<UserEntity> userOptional = userRepository.findById(uuid);
-        return processAndMap(userOptional);
+        return validateAndMap(userOptional);
     }
 
     @Override
     public Optional<UserResponse> findUserByUsername(String username) {
         Optional<UserEntity> userOptional = userRepository.findByUsername(username);
-        return processAndMap(userOptional);
+        return validateAndMap(userOptional);
     }
 
     @Override
@@ -70,7 +70,7 @@ public class UserServiceImpl implements UserService {
         });
     }
 
-    private Optional<UserResponse> processAndMap(Optional<UserEntity> userOptional) {
+    private Optional<UserResponse> validateAndMap(Optional<UserEntity> userOptional) {
         if (userOptional.isPresent() && !userOptional.get().isActive()) {
             return Optional.empty();
         }
