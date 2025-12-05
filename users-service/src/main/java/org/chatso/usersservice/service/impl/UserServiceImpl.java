@@ -24,7 +24,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public Optional<UserResponse> findUserByUuid(String uuid) {
-        Optional<UserEntity> userOptional = userRepository.findById(uuid);
+        Optional<UserEntity> userOptional = userRepository.findByUuid(uuid);
         return validateAndMap(userOptional);
     }
 
@@ -43,14 +43,14 @@ public class UserServiceImpl implements UserService {
     @Override
     @Transactional
     public void updateUser(String uuid, UpdateUserRequest request) {
-        Optional<UserEntity> userOptional = userRepository.findById(uuid);
+        Optional<UserEntity> userOptional = userRepository.findByUuid(uuid);
         update(userOptional, request);
     }
 
     @Override
     @Transactional
     public void deactivateUser(String uuid) {
-        Optional<UserEntity> userOptional = userRepository.findById(uuid);
+        Optional<UserEntity> userOptional = userRepository.findByUuid(uuid);
         deactivate(userOptional);
     }
 
