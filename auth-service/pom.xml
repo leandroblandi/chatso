@@ -2,33 +2,38 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
+
+    <!-- Project parent -->
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>4.0.0</version>
+        <version>3.5.8</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
+
+    <!-- Project metadata -->
     <groupId>org.chatso</groupId>
     <artifactId>auth-service</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>1.0</version>
     <name>auth-service</name>
     <description>auth-service</description>
-    <url/>
-    <licenses>
-        <license/>
-    </licenses>
+
+    <!-- Project developers -->
     <developers>
-        <developer/>
+        <developer>
+            <name>Leandro Blandi</name>
+            <roles>
+                <role>Backend Engineer</role>
+            </roles>
+        </developer>
     </developers>
-    <scm>
-        <connection/>
-        <developerConnection/>
-        <tag/>
-        <url/>
-    </scm>
+
+    <!-- Project properties and versions -->
     <properties>
         <java.version>21</java.version>
     </properties>
+
+    <!-- Project dependencies -->
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -42,6 +47,7 @@
         </dependency>
     </dependencies>
 
+    <!-- Project building configuration -->
     <build>
         <plugins>
             <plugin>
